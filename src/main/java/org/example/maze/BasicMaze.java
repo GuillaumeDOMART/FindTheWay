@@ -1,16 +1,18 @@
 package org.example.maze;
 
 import org.example.maze.components.Box;
+import org.example.utils.Coordinate;
 import org.example.utils.Size;
 
-public class TraditionalMaze {
+public class BasicMaze {
     private final Size size;
-
     private final Box[] map;
+    private final Coordinate exit;
 
-    TraditionalMaze(Size size, Box[] map) {
+    BasicMaze(Size size, Box[] map) {
         this.size = size;
         this.map = map;
+        this.exit = new Coordinate(size.width() - 1, size.height() - 1);
     }
 
 //    @Override

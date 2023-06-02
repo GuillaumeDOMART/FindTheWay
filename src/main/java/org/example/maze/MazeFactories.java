@@ -6,6 +6,6 @@ import java.util.Random;
 
 public interface MazeFactories {
 
-    Box[] generateMaze();
-    Box[] prepareMaze(Random random, Box[] map);
+    void generateMaze();
+    void prepareMaze(Random random);
 }
