@@ -1,11 +1,7 @@
 package org.example.maze;
 
-import org.example.maze.components.Box;
-
-import java.util.Random;
+import org.example.maze.generator.Generator;
 
 public interface MazeFactories {
-
-    void generateMaze();
-    void prepareMaze(Random random);
+    Maze process(Generator generator);
 }

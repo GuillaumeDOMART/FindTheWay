@@ -1,17 +1,20 @@
 package org.example.maze;
 
 import org.example.maze.components.Box;
+import org.example.maze.generator.MazeGenerator;
 import org.example.utils.Coordinate;
 import org.example.utils.Size;
 
-public class BasicMaze {
+public class BasicMaze implements Maze{
     private final Size size;
     private final Box[] map;
+    private final Coordinate start;
     private final Coordinate exit;
 
-    BasicMaze(Size size, Box[] map) {
-        this.size = size;
-        this.map = map;
+    BasicMaze(MazeGenerator generator) {
+        this.size = generator.getMazeSize();
+        this.map = generator.getMazeMap();
+        this.start = new Coordinate(0, 0);
         this.exit = new Coordinate(size.width() - 1, size.height() - 1);
     }
 
