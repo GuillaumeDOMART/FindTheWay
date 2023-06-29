@@ -10,4 +10,5 @@ public interface MazeGenerator {
     MazeGenerator prepareMaze(Random random);
     Box[] getMazeMap();
     Size getMazeSize();
+    String toString();
 }

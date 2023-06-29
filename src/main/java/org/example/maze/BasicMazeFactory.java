@@ -17,8 +17,12 @@ public class BasicMazeFactory implements MazeFactories {
         try {
             var mazeGenerator = generator.getGenerator(size).generateMaze().prepareMaze(new Random(System.currentTimeMillis()));
             return new BasicMaze(mazeGenerator);
-        } catch (Exception e) {
+        } catch (IllegalAccessException e) {
             System.out.println("Wrong Generator chosen !");
+            return null;
+        } catch (ArrayIndexOutOfBoundsException e) {
+            e.printStackTrace();
+            System.out.println("Array exception error !");
             return null;
         }
     }
