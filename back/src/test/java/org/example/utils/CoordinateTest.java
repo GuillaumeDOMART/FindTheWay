@@ -5,7 +5,7 @@ import org.junit.Test;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-public class CoordinateTest {
+class CoordinateTest {
 
     /*
 
@@ -24,51 +24,51 @@ public class CoordinateTest {
     */
 
     @Test
-    public void getPositionShouldReturnPositionFromGoodCoordinates() {
+    void getPositionShouldReturnPositionFromGoodCoordinates() {
         Size size = new Size(5, 3);
         assertEquals(8, new Coordinate(3, 1).getPosition(size));
 
     }
 
     @Test
-    public void getPositionShouldThrowErrorFromNegativePositionX() {
+    void getPositionShouldThrowErrorFromNegativePositionX() {
         Size size = new Size(5, 3);
         assertThrows(IllegalStateException.class, () -> new Coordinate(-3, 1).getPosition(size));
     }
 
     @Test
-    public void getPositionShouldThrowErrorFromNegativePositionY() {
+    void getPositionShouldThrowErrorFromNegativePositionY() {
         Size size = new Size(5, 3);
         assertThrows(IllegalStateException.class, () -> new Coordinate(3, -1).getPosition(size));
     }
 
     @Test
-    public void getPositionShouldThrowErrorFromTooBigCoordinateX() {
+    void getPositionShouldThrowErrorFromTooBigCoordinateX() {
         Size size = new Size(5, 3);
         assertThrows(IllegalArgumentException.class, () -> new Coordinate(3, 10).getPosition(size));
     }
 
     @Test
-    public void getPositionShouldThrowErrorFromTooBigCoordinateY() {
+    void getPositionShouldThrowErrorFromTooBigCoordinateY() {
         Size size = new Size(5, 3);
         assertThrows(IllegalArgumentException.class, () -> new Coordinate(30, 1).getPosition(size));
     }
 
     @Test
-    public void getCoordinateShouldReturnCoordinatesFromGoodPosition() {
+    void getCoordinateShouldReturnCoordinatesFromGoodPosition() {
         Size size = new Size(5, 3);
         assertEquals(new Coordinate(2, 1), Coordinate.getCoordinate(7, size));
     }
 
 
     @Test
-    public void getCoordinateShouldThrowErrorFromNegativePosition() {
+    void getCoordinateShouldThrowErrorFromNegativePosition() {
         Size size = new Size(5, 3);
         assertThrows(IllegalArgumentException.class, () -> Coordinate.getCoordinate(-1, size));
     }
 
     @Test
-    public void getCoordinateShouldThrowErrorFromTooBigPosition() {
+    void getCoordinateShouldThrowErrorFromTooBigPosition() {
         Size size = new Size(5, 3);
         assertThrows(IllegalArgumentException.class, () -> Coordinate.getCoordinate(15, size));
     }

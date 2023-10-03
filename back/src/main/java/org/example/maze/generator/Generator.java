@@ -6,11 +6,10 @@ public enum Generator {
     FUSION_RANG;
 
     public MazeGenerator getGenerator(Size size) throws IllegalAccessException {
-        switch (this) {
-            case FUSION_RANG -> {
-                return new FusionRangGenerator(size);
-            }
-            default -> throw new IllegalAccessException();
+        if (this == FUSION_RANG) {
+            return new FusionRangGenerator(size);
+        } else {
+            throw new IllegalAccessException();
         }
     }
 }
